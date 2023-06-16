@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#8BBCE3"
+    tools:context=".main.MainActivity">
+
+
+    <TextView
+        android:id="@+id/screenTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        android:text="@string/txtInventoryHeader"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="#0011AA"
+        android:textStyle="bold"
+        />
+
+    <TableLayout
+        android:id="@+id/inventoryTable"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#3399FF">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:background="#0033CC">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text="@string/txtItemNumberHeader"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#8BBCE3"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text="@string/txtItemDescriptionHeader"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#8BBCE3"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="20"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text=""
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:backgroundTint="#8BBCE3"
+                android:textColor="#88BBCE"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:id="@+id/inventoryRow1" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text=""
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription1" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:id="@+id/inventoryRow2"  >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text=""
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription2" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete2" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:id="@+id/inventoryRow3" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="10"
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity3" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:scrollHorizontally = "true"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription3" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:id="@+id/inventoryRow4"  >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="10"
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity4" />
+
+            <TextView
+                android:id="@+id/txtDescription4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_weight="80"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#0055EE"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="10"
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity5" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription5"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete5" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="10"
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity6" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription6"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete6" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text=""
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity7" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription7"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete7" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text=""
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity8" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription8" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete8" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text=""
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity9" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription9" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete9"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:text=""
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtQuantity10" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text=""
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/txtDescription10" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnDeleteItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#4499DD"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="deleteItem"
+                android:id="@+id/btnDelete10" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:background="#4499DD" >
+
+            <EditText
+                android:layout_width="26dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_weight="10"
+                android:gravity="right"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text=""
+                android:inputType="number"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/newItemQuantity" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:text="@string/etxtRestockPrompt"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#0055EE"
+                android:textSize="20sp"
+                android:id="@+id/newItemDescription" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+                android:text="@string/btnAddItem"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#0055EE"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:onClick="addItem" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"  >
+
+            <Button
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_weight="20"
+                android:layout_height="60dp" />
+
+            <Button
+                android:id="@+id/btnMoveUpList"
+                android:layout_width="0dp"
+                android:layout_weight="20"
+                android:layout_marginLeft="25dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#0055EE"
+                android:text="@string/btnUp"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:onClick="moveUpList" />
+
+            <Button
+                android:id="@+id/btnMoveDownList"
+                android:layout_width="0dp"
+                android:layout_weight="20"
+                android:layout_marginLeft="25dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#0055EE"
+                android:text="@string/btnDown"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="205dp"
+                tools:layout_editor_absoluteY="596dp"
+                android:onClick="moveDownList" />
+
+            <Button
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_weight="20"
+                android:layout_marginLeft="25dp"
+                android:layout_height="60dp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/enableNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Enable Notifications"
+        android:textColor="#0055EE"
+        app:layout_constraintTop_toBottomOf="@id/inventoryTable"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8BBCE3"
+    tools:context=".login.AuthenticateActivity">
+
+    <EditText
+        android:id="@+id/etxtAuthenticationCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/etxtAuthenticationCode"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="#9CCDF4"
+        android:text="SEND CODE"
+        android:textColor="#0055EE"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/etxtAuthenticationCode"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginRight="85dp"
+        android:id="@+id/btnSendCode"
+        android:onClick="sendSMSMessage" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="#0055EE"
+        android:text="@string/btnAuthenticate"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/btnSendCode"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginRight="85dp"
+        android:id="@+id/btnAuthenticate"
+        android:onClick="createLogin" />
+
+    <Button
+        android:id="@+id/btnGoBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#4499FF"
+        android:text="@string/btnBack"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:onClick="goBack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
